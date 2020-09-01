@@ -1,0 +1,10 @@
+vendor/*
+.env
+.vscode/*
+.DS_Store
+
+# simple state management
+conference.txt
+
+.idea
+*.jpeg
