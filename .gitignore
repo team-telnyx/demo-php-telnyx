@@ -1,4 +1,4 @@
-vendor/*
+vendor
 .env
 .vscode/*
 .DS_Store

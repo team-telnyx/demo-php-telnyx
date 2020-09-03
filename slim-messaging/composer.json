@@ -1,0 +1,11 @@
+{
+    "require": {
+        "vlucas/phpdotenv": "^5.1",
+        "telnyx/telnyx-php": "^2.0",
+        "slim/http": "^1.0",
+        "slim/psr7": "^1.2",
+        "slim/slim": "^4.5",
+        "aws/aws-sdk-php": "^3.151",
+        "jakeasmith/http_build_url": "^1.0"
+    }
+}
