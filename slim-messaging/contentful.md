@@ -131,9 +131,9 @@ The basic overview of the application is as follows:
 
 1. Verify webhook & create TelnyxEvent
 2. Extract information from the webhook
-3. Iterate over any media and download/re-upload to S3 each attachment
+3. Iterate over any media and download/re-upload to S3 for each attachment
 4. Send the message back to the phone number from which it came
-5. Acknowledge the status update
+5. Acknowledge the status update (DLR) of the outbound message
 
 #### Webhook validation middleware
 
