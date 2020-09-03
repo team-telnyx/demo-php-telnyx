@@ -111,10 +111,10 @@ $app->post('/messaging/inbound', function (Request $request, Response $response)
         echo 'Caught exception: ',  $e->getMessage(), "\n";
     }
     return $response->withStatus(200);
-}); //->add($telnyxWebhookVerify)
+})->add($telnyxWebhookVerify);
 
 $app->post('/messaging/outbound', function (Request $request, Response $response) {
-
+    // Handle outbound DLR
     return $response->withStatus(200);
-}); //->add($telnyxWebhookVerify);
+})->add($telnyxWebhookVerify);
 $app->run();
