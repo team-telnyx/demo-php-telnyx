@@ -1,0 +1,98 @@
+{
+    "data": [
+        {
+            "quickship": true,
+            "region_information": [
+                {
+                    "region_type": "country_code",
+                    "region_name": "US"
+                }
+            ],
+            "reservable": false,
+            "features": [
+                {
+                    "name": "fax"
+                },
+                {
+                    "name": "voice"
+                },
+                {
+                    "name": "sms"
+                }
+            ],
+            "best_effort": false,
+            "phone_number": "+18889991513",
+            "vanity_format": null,
+            "record_type": "available_phone_number",
+            "cost_information": {
+                "upfront_cost": "1.00000",
+                "currency": "USD",
+                "monthly_cost": "1.00000"
+            }
+        },
+        {
+            "quickship": true,
+            "region_information": [
+                {
+                    "region_type": "country_code",
+                    "region_name": "US"
+                }
+            ],
+            "reservable": false,
+            "features": [
+                {
+                    "name": "fax"
+                },
+                {
+                    "name": "voice"
+                },
+                {
+                    "name": "sms"
+                }
+            ],
+            "best_effort": false,
+            "phone_number": "+18889992056",
+            "vanity_format": null,
+            "record_type": "available_phone_number",
+            "cost_information": {
+                "upfront_cost": "1.00000",
+                "currency": "USD",
+                "monthly_cost": "1.00000"
+            }
+        },
+        {
+            "quickship": true,
+            "region_information": [
+                {
+                    "region_type": "country_code",
+                    "region_name": "US"
+                }
+            ],
+            "reservable": false,
+            "features": [
+                {
+                    "name": "fax"
+                },
+                {
+                    "name": "voice"
+                },
+                {
+                    "name": "sms"
+                }
+            ],
+            "best_effort": false,
+            "phone_number": "+18889994150",
+            "vanity_format": null,
+            "record_type": "available_phone_number",
+            "cost_information": {
+                "upfront_cost": "1.00000",
+                "currency": "USD",
+                "monthly_cost": "1.00000"
+            }
+        }
+    ],
+    "metadata": {
+        "total_results": 3,
+        "best_effort_results": 0
+    }
+}

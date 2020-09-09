@@ -27,7 +27,8 @@ You will need to set up:
 
 | Example                                        | Description                                                                                                         |
 |:-----------------------------------------------|:--------------------------------------------------------------------------------------------------------------------|
-| [Slim Messaging](slim-messaging)         | Example working with inbound MMS & SMS messages, downloading media from inbound MMS, and uploading media to AWS S3. |
+| [Slim Messaging](slim-messaging)               | Example working with inbound MMS & SMS messages, downloading media from inbound MMS, and uploading media to AWS S3. |
+| [console-number-search](console-number-search) | Example searching Available Numbers and counting number of unique `nxx` values returned from Telnyx                 |
 
 ### Install
 

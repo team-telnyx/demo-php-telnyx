@@ -121,9 +121,9 @@ $app = AppFactory::create();
 $app->addErrorMiddleware(true, true, true);
 ```
 
-## Receiving Webhooks & Creating a Conference
+## Receiving Webhooks
 
-Now that you have setup your auth token, phone number, and connection, you can begin to use the API Library to make and control conferences. First, you will need to setup a Slim endpoint to receive webhooks for inbound messages & outbound message Delivery Receipts (DLR).
+Now that you have setup your auth token, phone number, and connection, you can begin to use the API Library to send/receive SMS & MMS messages. First, you will need to setup an endpoint to receive webhooks for inbound messages & outbound message Delivery Receipts (DLR).
 
 ### Basic Routing & Functions
 
