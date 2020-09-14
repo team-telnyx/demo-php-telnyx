@@ -51,22 +51,33 @@ Run the following commands to get started
 
 ```
 $ git clone https://github.com/d-telnyx/demo-php-telnyx.git
-$ cd console-number-search
+$ cd console-number-search-and-order
 $ composer install
 ```
 
 ### Run
 
-Run the PHP script `php app.php` from the command line and answer the prompt for area code / NPA
+Run the PHP script `php app.php` from the command line and answer the prompts to search and order
 
 ```
 $ php app.php
-Which NPA (area code) would you like to get NXX counts?: 919
+Which NPA (area code) would you like to get NXX counts?: 828
+(y/n) Would you like to order +18289293882?
+n
+Ok, not ordering
+(y/n) Would you like to order +18285208845?
+y
+Order for phone number: +18285208845 is pending
+Phone Number: +18285208845 with id: 1461090961252681720 status is: active
 Array
 (
-    [335] => 2
-    [646] => 5
-    [887] => 6
-    [944] => 2
+    [1] => stdClass Object
+        (
+            [orderId] => a0afc4d3-8d27-4f94-a385-649af4e0e7d4
+            [phoneNumber] => +18285208845
+            [phoneNumberStatus] => active
+            [phoneNumberId] => 1461090961252681720
+        )
+
 )
 ```
