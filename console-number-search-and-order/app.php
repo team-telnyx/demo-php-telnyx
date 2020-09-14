@@ -34,6 +34,10 @@ function searchAvailableNumbers(string $areaCode) {
            "filter[limit]" => 2
        ]);
        $availableNumbers = array_map("filterPhoneNumber", $telnyxResponse["data"]);
+       if (empty($availableNumbers)) {
+           echo "No results found for {$areaCode}, quitting\n";
+           exit;
+       }
        return $availableNumbers;
    } catch (Exception $e){
        echo "Caught exception: ",  $e->getMessage(), "\n";
