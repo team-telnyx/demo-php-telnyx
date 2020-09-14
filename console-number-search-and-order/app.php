@@ -91,7 +91,7 @@ function promptAndOrder(string $phoneNumber){
 }
 
 function Main(){
-    $areaCode = getUserInput("Which NPA (area code) would you like to get NXX counts?: ");
+    $areaCode = getUserInput("Which NPA (area code) would you like to get search?: ");
     $availableNumbers = searchAvailableNumbers($areaCode);
     $ordersInformation =  array_filter(array_map("promptAndOrder", $availableNumbers));
     $updatedOrdersInformation = array_map("getPhoneNumberStatus", $ordersInformation);

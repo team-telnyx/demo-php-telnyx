@@ -61,7 +61,7 @@ Run the PHP script `php app.php` from the command line and answer the prompts to
 
 ```
 $ php app.php
-Which NPA (area code) would you like to get NXX counts?: 828
+Which NPA (area code) would you like to search?: 828
 (y/n) Would you like to order +18289293882?
 n
 Ok, not ordering
