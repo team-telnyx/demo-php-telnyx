@@ -7,7 +7,7 @@ require __DIR__ . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-$TELNYX_API_KEY = getenv('TELNYX_API_KEY');
+$TELNYX_API_KEY = $_ENV["TELNYX_API_KEY"];
 Telnyx\Telnyx::setApiKey($TELNYX_API_KEY);
 
 function extractNxx(object $telnyxAvailablePhoneNumberResponse){
@@ -53,7 +53,4 @@ $areaCode = getAreaCodeFromUser();
 $telnyxResponse = searchAvailableNumbers($areaCode);
 $nxxCount = findUniqueCount($telnyxResponse);
 print_r($nxxCount);
-
-
-
 
