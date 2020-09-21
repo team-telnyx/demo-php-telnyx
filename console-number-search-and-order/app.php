@@ -80,7 +80,7 @@ function promptAndOrder(string $phoneNumber) : ?PhoneNumberOrder {
 
 
 /**
- * Class orderResponse holds information about a Telnyx Order
+ * Class PhoneNumberOrder holds information about a Telnyx Order
  */
 class PhoneNumberOrder {
     public string $orderId;
