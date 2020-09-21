@@ -1,6 +1,6 @@
 # Title
 
-⏱ **30 minutes build time || [Github Repo]()**
+⏱ **30 minutes build time **
 
 ## Introduction
 
