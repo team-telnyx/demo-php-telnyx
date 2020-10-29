@@ -30,7 +30,7 @@ You will need to set up:
 | [Slim Messaging](slim-messaging)               | Example working with inbound MMS & SMS messages, downloading media from inbound MMS, and uploading media to AWS S3. |
 | [console-number-search](console-number-search) | Example searching Available Numbers and counting number of unique `nxx` values returned from Telnyx                 |
 | [console-number-search-and-order](console-number-search-and-order) | Example searching and then ordering a phone number from the Telnyx API |
-| [webinar-demo](webinar-demo) | Source code from the introduction to Messaging and PHP Webinar |
+| [webinar-demo](webinar-demo) | Source code from the introduction to Messaging and [PHP Webinar](https://telnyx.com/sms-php-webinar) |
 
 
 ### Install
