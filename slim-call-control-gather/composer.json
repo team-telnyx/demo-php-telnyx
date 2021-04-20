@@ -1,0 +1,9 @@
+{
+    "require": {
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.3",
+        "telnyx/telnyx-php": "^2.5",
+        "vlucas/phpdotenv": "^5.3",
+        "slim/http": "^1.2"
+    }
+}
