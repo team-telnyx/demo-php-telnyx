@@ -51,7 +51,7 @@ Run the following commands to get started
 
 ```
 $ git clone https://github.com/d-telnyx/demo-php-telnyx.git
-$ cd console-number-search-and-order
+$ cd console-verify
 $ composer install
 ```
 
