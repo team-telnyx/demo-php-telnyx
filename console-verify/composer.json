@@ -1,0 +1,14 @@
+{
+    "name": "vladi/console-verify",
+    "description": "telnyx console-verify",
+    "authors": [
+        {
+            "name": "vionash",
+            "email": "vladi@telnyx.com"
+        }
+    ],
+    "require": {
+        "telnyx/telnyx-php": "2.5.1",
+        "vlucas/phpdotenv": "^5.1"
+    }
+}
