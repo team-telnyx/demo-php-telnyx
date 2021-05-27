@@ -8,3 +8,5 @@ conference.txt
 
 .idea
 *.jpeg
+console-verify/composer.phar
+console-verify/composer.lock
