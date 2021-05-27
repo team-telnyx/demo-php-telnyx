@@ -2,7 +2,7 @@
 
 # Telnyx PHP SMS Autoresponder
 
-![Telnyx](logo-dark.png)
+![Telnyx](../logo-dark.png)
 
 Sample application demonstrating PHP SMS autoresponse
 
