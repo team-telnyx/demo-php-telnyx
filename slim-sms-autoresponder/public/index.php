@@ -26,12 +26,6 @@ $dotenv->load();
 $TELNYX_API_KEY = $_ENV['TELNYX_API_KEY'];
 \Telnyx\Telnyx::setApiKey($TELNYX_API_KEY);
 
-function replyToSMS($preparedReply, $replyToTN, $thisRouter) {
-    $telnyxSMSNumber = $_ENV['TELNYX_SMS_NUMBER'];
-    $smsResponse = \Telnyx\Message::Create(['from' => $telnyxSMSNumber, 'to' => $replyToTN, 'text' => $preparedReply]);
-    $thisRouter->logger->info($smsResponse);
-}
-
 function getPreparedReply($message) {
     switch($message) {
         case "ice cream":
@@ -59,8 +53,11 @@ function processWebhook($data, $thisRouter) {
         $preparedReply = getPreparedReply($text);
         $thisRouter->logger->info("Prepared reply is \"" . $preparedReply ."\"");
         
+        $telnyxSMSNumber = $data['payload']['to'][0]['phone_number'];
         $replyToTN = $data['payload']['from']['phone_number'];
-        replyToSMS($preparedReply, $replyToTN, $thisRouter);
+        
+        $smsResponse = \Telnyx\Message::Create(['from' => $telnyxSMSNumber, 'to' => $replyToTN, 'text' => $preparedReply]);
+        $thisRouter->logger->info($smsResponse);
     }
 }
 
