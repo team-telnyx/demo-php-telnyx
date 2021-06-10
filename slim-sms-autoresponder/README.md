@@ -21,7 +21,7 @@ Sample application demonstrating PHP SMS autoresponse
 
 - Clone this repository and change directory to this project folder
 - Run `composer install`
-- Run `cp .env.sample .env` and proceed to record the purchased sms number as well as the [Telynx API Key](https://portal.telnyx.com/#/app/api-keys) in the `.env` file
+- Run `cp .env.sample .env` and record the [Telynx API Key](https://portal.telnyx.com/#/app/api-keys) in the `.env` file
 - Start the app `php -S localhost:5000 -t public`
 
 ## Setup Reverse Proxy to Localhost
