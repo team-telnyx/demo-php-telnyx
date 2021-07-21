@@ -134,17 +134,53 @@ function orderNumber(string $phoneNumber) : ?PhoneNumberOrder {
  * @param PhoneNumberOrder $orderInformation Response from the orderNumber function
  * @return PhoneNumberOrder updates the phone number status and the phone number id
  */
-function getPhoneNumberStatus(PhoneNumberOrder $orderInformation): PhoneNumberOrder{
+function waitForPhoneNumberToBeActive(PhoneNumberOrder $orderInformation): PhoneNumberOrder{
     try {
         $telnyxResponse = PhoneNumber::Retrieve($orderInformation->phoneNumber);
-        $orderInformation->phoneNumberStatus = (string) $telnyxResponse["status"];
+        $orderStatus = (string) $telnyxResponse["status"];
         $orderInformation->phoneNumberId = (string) $telnyxResponse["id"];
+        while ($orderStatus == 'purchase-pending') {
+            sleep(1);
+            $telnyxResponse = PhoneNumber::Retrieve($orderInformation->phoneNumber);
+            $orderStatus = (string) $telnyxResponse["status"];
+        }
+        $orderInformation->phoneNumberStatus = $orderStatus;
         echo "Phone Number: {$orderInformation->phoneNumber} with id: {$orderInformation->phoneNumberId} status is: {$orderInformation->phoneNumberStatus}\n";
         return $orderInformation;
     } catch (Exception $e){
         echo "Caught exception: ",  $e->getMessage(), "\n";
         exit;
    }
+}
+
+
+/**
+ * Adds tags to phone numbers
+ * @param PhoneNumberOrder $orderInformation
+ * @param String $tag
+ * @return PhoneNumber
+ */
+function addTagToPhoneNumber(PhoneNumberOrder $orderInformation, String $tag): PhoneNumber {
+    try {
+        $phoneNumberId = $orderInformation->phoneNumberId;
+        PhoneNumber::Update($phoneNumberId, ["tags" => [$tag]]);
+        $telnyxResponse = PhoneNumber::Retrieve($orderInformation->phoneNumberId);
+        return $telnyxResponse;
+    } catch (Exception $e){
+        echo "Caught exception: ",  $e->getMessage(), "\n";
+        exit;
+   }
+}
+
+/**
+ * Prompts the user for a tag for each phone number
+ * @param PhoneNumberOrder $orderInformation
+ * @return String tag for the new phone number
+ */
+function promptForTags(PhoneNumberOrder $orderInformation): String{
+    $phoneNumber = $orderInformation->phoneNumber;
+    $tag = getUserInput("Tag for {$phoneNumber}?\n");
+    return $tag;
 }
 
 /**
@@ -154,8 +190,10 @@ function Main(){
     $areaCode = getUserInput("Which NPA (area code) would you like to search?: ");
     $availableNumbers = searchAvailableNumbersByAreaCode($areaCode);
     $ordersInformation =  array_filter(array_map("promptAndOrder", $availableNumbers));
-    $updatedOrdersInformation = array_map("getPhoneNumberStatus", $ordersInformation);
-    print_r($updatedOrdersInformation);
+    $updatedOrdersInformation = array_map("waitForPhoneNumberToBeActive", $ordersInformation);
+    $tags = array_map("promptForTags", $updatedOrdersInformation);
+    $telnyxResponses = array_map("addTagToPhoneNumber", $updatedOrdersInformation, $tags);
+    print_r($telnyxResponses);
 }
 
 Main();
