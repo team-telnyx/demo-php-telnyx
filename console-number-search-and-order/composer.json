@@ -1,6 +1,7 @@
 {
     "require": {
         "telnyx/telnyx-php": "^2.0",
-        "ext-json": "*"
+        "ext-json": "*",
+        "vlucas/phpdotenv": "^5.3"
     }
 }
