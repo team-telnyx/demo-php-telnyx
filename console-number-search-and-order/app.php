@@ -9,7 +9,7 @@ require __DIR__ . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-$TELNYX_API_KEY = getenv("TELNYX_API_KEY");
+$TELNYX_API_KEY = $_ENV["TELNYX_API_KEY"];
 Telnyx\Telnyx::setApiKey($TELNYX_API_KEY);
 
 /**
@@ -109,7 +109,8 @@ function orderNumber(string $phoneNumber) : ?PhoneNumberOrder {
         $requestBody = [
             "phone_numbers" => [
                 ["phone_number" => $phoneNumber]
-            ]];
+            ]
+        ];
         $telnyxResponse = NumberOrder::Create($requestBody);
         $orderInformation = new PhoneNumberOrder(
             $telnyxResponse["id"],
